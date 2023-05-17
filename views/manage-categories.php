@@ -45,7 +45,10 @@
                         print("<tr>");
                         print("<td>" . $datosCategorias[$i]['nombre']  ."</td>");
                         
-                        print("<td><a href='' class='btn sm'>Edit</a></td>");
+                        print("<form action='../controller/showUpdateCategory.php' method='POST'>");
+                        print("<input type='hidden' name='id' id='id' value='" . $datosCategorias[$i]["id"] . "'/>");
+                        print("<td><button href='' class='btn sm'>Edit</button></td>");
+                        print("</form>");
 
                         print("<form action='../controller/borrarCategory.php' method='POST'>");
                         print("<input type='hidden' name='id' id='id' value='" . $datosCategorias[$i]["id"] . "'/>");

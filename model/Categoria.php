@@ -52,20 +52,20 @@ class Categoria {
     }
 
     /**
-     * Devuelve los productos asociados al id del usuario introducido
+     * Devuelve los productos asociados al id del producto introducido
      */
-    public function getPiloto($idUsuario, $conexPDO)
+    public function getOneCategory($idCategoria, $conexPDO)
     {
-        if (isset($idUsuario) && is_numeric($idUsuario)) {
+        if (isset($idCategoria) && is_numeric($idCategoria)) {
 
 
             if ($conexPDO != null) {
                 try {
                     //Primero introducimos la sentencia a ejecutar con prepare
                     //Ponemos en lugar de valores directamente, interrogaciones
-                    $sentencia = $conexPDO->prepare("SELECT * FROM allsports.productos where idUsuario=?");
+                    $sentencia = $conexPDO->prepare("SELECT * FROM allsports.categorias where id=?");
                     //Asociamos a cada interrogacion el valor que queremos en su lugar
-                    $sentencia->bindParam(1, $idUsuario);
+                    $sentencia->bindParam(1, $idCategoria);
                     //Ejecutamos la sentencia
                     $sentencia->execute();
 
@@ -134,24 +134,24 @@ class Categoria {
         return $result;
     }
 
-    function updateProducto($producto, $conexPDO)
+    function updateCategoria($categoria, $conexPDO)
     {
 
 
         $result = null;
-        if (isset($usuario) && isset($usuario["nombre"]) && isset($usuario["descripcion"]) && isset($usuario["precio"]) && $conexPDO != null) {
+        if (isset($categoria) && isset($categoria["nombre"]) && isset($categoria["descripcion"]) && isset($categoria["imagen"]) && $conexPDO != null) {
 
             try {
                 //Preparamos la sentencia
-                $sentencia = $conexPDO->prepare("UPDATE allsports.usuarios set nombre=:nombre, descripcion=:descripcion, precio=:precio where id=:id");
+                $sentencia = $conexPDO->prepare("UPDATE allsports.categorias set nombre=:nombre, descripcion=:descripcion, imagen=:imagen where id=:id");
 
                 //print($sentencia->queryString);
 
                 //Asociamos los valores a los parametros de la sentencia sql
-                $sentencia->bindParam(":id", $usuario["id"]);
-                $sentencia->bindParam(":nombre", $usuario["nombre"]);
-                $sentencia->bindParam(":descripcion", $usuario["descripcion"]);
-                $sentencia->bindParam(":precio", $usuario["precio"]);
+                $sentencia->bindParam(":id", $categoria["id"]);
+                $sentencia->bindParam(":nombre", $categoria["nombre"]);
+                $sentencia->bindParam(":descripcion", $categoria["descripcion"]);
+                $sentencia->bindParam(":imagen", $categoria["imagen"]);
 
                 //Ejecutamos la sentencia
                 $result = $sentencia->execute();
