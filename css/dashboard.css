@@ -1,0 +1,132 @@
+/* ==========================================================================================================
+DASHBOARD 
+========================================================================================================== */
+
+.dashboard {
+    margin-top: 6rem;
+}
+
+.dashboard__container {
+    display: grid;
+    grid-template-columns: 14rem auto;
+    gap: 1rem;
+    background: var(--color-primary);
+    padding: 2rem;
+    margin-bottom: 5rem;
+}
+
+.dashboard aside a {
+    background-color: var(--color-primary);
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    padding: 1rem;
+}
+
+.dashboard aside ul li:not(:last-child) {
+    border-bottom: 1px solid var(--color-grey-900);
+}
+
+.dashboard aside a:hover {
+    background-color: var(--color-grey-700);
+}
+
+.dashboard aside a.active {
+    background-color: var(--color-orange);
+}
+
+.dashboard i, h5, th, td, h2 {
+    color: var(--color-white);
+}
+
+.dashboard main {
+    margin-left: 1.5rem;
+}
+
+.dashboard main h2 {
+    margin: 0 0 2rem 0;
+    line-height: 1;
+}
+
+.dashboard main table {
+    width: 100%;
+    text-align: center;
+}
+
+.dashboard main table th {
+    background-color: var(--color-grey-700);
+    padding: 0.8rem;
+}
+
+.dashboard main table td {
+    border-bottom: 1px solid var(--color-grey-200);
+    padding: 0.8rem;
+}
+
+/*
+.dashboard main table tr:hover td {
+    background-color: var(--color-grey-700);
+    color: var(--color-white);
+    cursor: default;
+    transition: var(--transition);
+}
+*/
+
+
+
+
+/* ==========================================================================================================
+BUTTON
+========================================================================================================== */
+
+.btn.sm {
+    padding: 0.3rem 0.7rem;
+    font-size: 0.8rem;
+}
+
+.btn.danger {
+    background: var(--color-red);
+}
+
+.btn:hover {
+    background: var(--color-white);
+    color: var(--color-primary);
+}
+
+/* ==========================================================================================================
+MEDIA QUERIES (MEDIUM)
+========================================================================================================== */
+
+@media screen and (max-width: 1024px) {
+    /* ========== DASHBOARD ========== */
+    .dashboard__container {
+        grid-template-columns: 4.3rem auto;
+        padding: 0;
+    }
+
+    .dashboard h5 {
+        display: none;
+    }
+
+    .dashboard main table thead {
+        display: none;
+
+    }
+
+    .dashboard h2 {
+        padding: 1rem;
+    }
+}
+
+/* ==========================================================================================================
+MEDIA QUERIES (SMALL)
+========================================================================================================== */
+
+@media screen and (max-width: 600px) {
+
+    .dashboard main table tr {
+        display: flex;
+        flex-direction: column;
+    }
+
+}
