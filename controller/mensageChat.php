@@ -22,6 +22,9 @@ if (isset($_GET['id'])) {
     $chat = array();
 
     $gestorChat = new Chat;
+    $gestorAllChat = new Chat();
+
+    $datosChat = $gestorAllChat->getChatUser($conexPDO, $_SESSION["id"]);
 
     $mensage = $gestorChat->getAllMensageChat($conexPDO, $_GET['id']);
     $chat = $gestorChat->getOneChat($_GET['id'], $conexPDO);

@@ -28,8 +28,8 @@ $url_avatar = "../images/" . $_SESSION['imagen'];
 <body>
 
     <main>
-        <div class="container">
-            <!--
+        <div class="container" id="miTabla" style="-webkit-box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.75); -moz-box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.75); box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.75);">
+            
             <section class="menu">
                 <header>
                     <form action="">
@@ -41,114 +41,31 @@ $url_avatar = "../images/" . $_SESSION['imagen'];
                 </header>
                 <div class="members">
                     <ul>
-                        <li class="member">
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSImhrk_R9iC1DtID7a9M7ouwDtvB_ourZY5w&usqp=CAU" alt="">
-                            <div class="name">
-                                <h3>thomas bangalter</h3>
-                                <p>i was wondering ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</p>
-                                <span class="date">2:09 pm</span>
-                            </div>
-                        </li>
-                        <li class="member">
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQy8_l-NUc-I5HoS2FQzrljDd5rrbLQqULorw&usqp=CAU" alt="">
-                            <div class="name">
-                                <h3>dog woofson</h3>
-                                <p>i've forgotten how it felt bbbbbbbbbbbbbbbbbb</p>
-                                <span class="date">1:44 pm</span>
-                            </div>
-                        </li>
-                        <li class="member">
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpq-D_mNYfW531QWhAc1fVqW2XWdO9fCzO6Q&usqp=CAU" alt="">
-                            <div class="name">
-                                <h3>louis CK</h3>
-                                <p>but we're probably gonna aaaaaaaaaaaaaaaaaaa</p>
-                                <span class="date">2:09 pm</span>
-                            </div>
-                        </li>
-                        <li class="member">
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaTEJLWAoRb2Iq93oKlvjIkdiDyZ9mGHQ3dw&usqp=CAU" alt="">
-                            <div class="name">
-                                <h3>bo jackson</h3>
-                                <p>it's not that bad ddddddddddddddddddddddddddddddd</p>
-                                <span class="date">2:09 pm</span>
-                            </div>
-                        </li>
-                        <li class="member">
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVguuSK25N-_2r6B9vp5J-TreN3462dPTQAw&usqp=CAU" alt="">
-                            <div class="name">
-                                <h3>michael jordan</h3>
-                                <p>wasup for the third time li lllllllllllllllllll</p>
-                                <span class="date">2:09 pm</span>
-                            </div>
-                        </li>
-                        <li class="member active">
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIvNRAu6lhqeqH0fexU5NtocTVa9eW7XZWsA&usqp=CAU" alt="">
-                            <div class="name">
-                                <h3>drake</h3>
-                                <p>howdoyoudospace</p>
-                                <span class="date">2:09 pm</span>
-                            </div>
-                        </li>
-                        <li class="member">
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSImhrk_R9iC1DtID7a9M7ouwDtvB_ourZY5w&usqp=CAU" alt="">
-                            <div class="name">
-                                <h3>thomas bangalter</h3>
-                                <p>i was wondering ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</p>
-                                <span class="date">2:09 pm</span>
-                            </div>
-                        </li>
-                        <li class="member">
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQy8_l-NUc-I5HoS2FQzrljDd5rrbLQqULorw&usqp=CAU" alt="">
-                            <div class="name">
-                                <h3>dog woofson</h3>
-                                <p>i've forgotten how it felt bbbbbbbbbbbbbbbbbb</p>
-                                <span class="date">1:44 pm</span>
-                            </div>
-                        </li>
-                        <li class="member">
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpq-D_mNYfW531QWhAc1fVqW2XWdO9fCzO6Q&usqp=CAU" alt="">
-                            <div class="name">
-                                <h3>louis CK</h3>
-                                <p>but we're probably gonna aaaaaaaaaaaaaaaaaaa</p>
-                                <span class="date">2:09 pm</span>
-                            </div>
-                        </li>
-                        <li class="member">
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaTEJLWAoRb2Iq93oKlvjIkdiDyZ9mGHQ3dw&usqp=CAU" alt="">
-                            <div class="name">
-                                <h3>bo jackson</h3>
-                                <p>it's not that bad ddddddddddddddddddddddddddddddd</p>
-                                <span class="date">2:09 pm</span>
-                            </div>
-                        </li>
-                        <li class="member">
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVguuSK25N-_2r6B9vp5J-TreN3462dPTQAw&usqp=CAU" alt="">
-                            <div class="name">
-                                <h3>michael jordan</h3>
-                                <p>wasup for the third time li lllllllllllllllllll</p>
-                                <span class="date">2:09 pm</span>
-                            </div>
-                        </li>
-                        <li class="member">
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIvNRAu6lhqeqH0fexU5NtocTVa9eW7XZWsA&usqp=CAU" alt="">
-                            <div class="name">
-                                <h3>drake</h3>
-                                <p>howdoyoudospace</p>
-                                <span class="date">2:09 pm</span>
-                            </div>
-                        </li>
+                        <?php
+                        for ($i = 0; $i < count($datosChat); $i++) {
+                            print("<a href='../controller/mensageChat.php?id=" . $datosChat[$i]['id'] . "' style='text-decoration: none;'>");
+                            print("<li class='member'>");
+                            print("<img src='../images/". $datosChat[$i]['imagen'] ."' alt=''>");
+                            print("<div class='name' >");
+                            print("<h3 style='color: black;'>" . $datosChat[$i]['nombreProducto']  . "</h3>");
+                            print("<p>" . $datosChat[$i]['nombreVendedor'] . "</p>");
+                            print("</div>");
+                            print("</li>");
+                            print("</a>");
+                        }
+                        ?>
                     </ul>
                 </div>
             </section>
--->
 
-            <section class="chat" style="-webkit-box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.75); -moz-box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.75); box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.75);">
+            <section class="chat">
                 <header style="display: flex; flex-direction:row; justify-content: space-between;">
                     <h3><span class="to">To:</span><?php echo $chat['nombreProducto']  ?></h3>
-                    <a style="color:orange; text-decoration:none" href="../controller/chatUser.php">BACK</a>
+                    <a style="color:orange; text-decoration:none" href="../controller/mainController.php">BACK</a>
                 </header>
                 <div class="chat-page">
-                    <div class="messages">
+                    
+                    <div class="messages" id="miTabla">
                         <?php
 
                         for ($i = 0; $i < (count($mensage) - 2); $i++) {
@@ -161,24 +78,7 @@ $url_avatar = "../images/" . $_SESSION['imagen'];
                         }
 
                         ?>
-                        <!--
-                        <span class="date">monday,1:27 PM</span>
-                        <p class="friend">so, how's your new phone?</p>
-                        <p class="friend">you finally have a smartphone :D</p>
-                        <p class="me">drake?</p>
-                        <p class="me">Why aren't you answering?</p>
-                        <p class="friend">howdoyoudospace</p>
-                        <p class="friend">so, how's your new phone?</p>
-                        <p class="friend">you finally have a smartphone :D</p>
-                        <p class="me">drake?</p>
-                        <p class="me">Why aren't you answering?</p>
-                        <p class="friend">howdoyoudospace</p>
-                        <p class="friend">so, how's your new phone?</p>
-                        <p class="friend">you finally have a smartphone :D</p>
-                        <p class="me">drake?</p>
-                        <p class="me">Why aren't you answering?</p>
-                        <p class="friend">howdoyoudospace</p>
-                    -->
+
                     </div>
                     <form action="../controller/add-mensage.php" method="POST" class="send">
                         <i class="fas fa-paperclip"></i>

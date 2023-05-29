@@ -8,7 +8,7 @@
         <div class="item">
             <div class="contactForm">
                 <div class="firstText">Let`s get in touch</div>
-                <img src="../images/contactUs-vector.png" class="imagenForm">
+                <img src="../images/contact-us-vector.avif" class="imagenForm">
             </div>
             <div class="submitForm">
                 <h4 class="thirdText textStyle">Contact Us</h4>
