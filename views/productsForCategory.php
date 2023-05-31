@@ -1,59 +1,24 @@
 <?php
         include("../views/commons/header.php");
 
-        use \model\Categoria;
-        use \model\Utils;
-
-        // Añadimos el código del modelo
-        require_once("../model/Categoria.php");
-        require_once("../model/Utils.php");
-
-        $gestorCat = new Categoria();
-
-        $datosCategorias = $gestorCat->getAllCategories($conexPDO);
-
-        
+        $idNombreCategoria = $_GET['id'] - 1;
 ?>
     
     <!-- ==================== END OF NAV ==================== -->
 
-    <section class="featured">
-        <div class="container feautured__container">
-            <div class="post__thumbnail">
-                <img src="../images/wallpaper-index-2.jpg">
-            </div>
-            <div class="post__info">
-                <!--
-                <a href="#" class="category__button">CLOTHE</a>
-                -->
-                <h2 class="post__title"><a href="#">WELCOME TO ALL SPORTS</a></h2>
-                <p class="post__body">
-                Bienvenido a ALL SPORTS, la tienda en línea especializada en productos deportivos de todo tipo.
-                <br><br>
-                En ALL SPORTS, no solo ofrecemos una amplia selección de productos deportivos de alta calidad, sino que también permitimos que las personas suban sus propios productos para venderlos a otros clientes.
-                <br><br>
-                En nuestra tienda encontrarás una gran variedad de productos deportivos, desde equipos para deportes de equipo como fútbol, baloncesto, voleibol y béisbol, hasta productos para deportes individuales como running, natación, ciclismo y yoga. También tenemos una selección de ropa deportiva, zapatos, accesorios y suplementos deportivos.
-                </p>
-                <!--
-                <div class="post__author">
-                    <div class="post__author-avatar">
-                        <img src="../images/foto1.avif">
-                    </div>
-                    <div class="post__author-info">
-                        <h5>By: Carlos Melero </h5>
-                        <small>Marzo 27 2023 - 18:13</small>
-                    </div>
-                </div>
-                -->
-            </div>
+    
+    
+    <section class="search__bar">
+        <div class="container" style="text-align: center;">
+                <?php print("<h1 style='color: #252b42;'>" . $datosCategorias[$idNombreCategoria]['nombre'] . "</h1>") ?>
         </div>
     </section>
 
-    <!-- ==================== END OF FEATURED ==================== -->
-
-    <section class="posts">
-        <div class="container posts__container"">
-            <?php
+    <!-- ==================== END OF SEARCH BAR ==================== -->
+<?php
+    if (count($datosProductos) != 0) {
+    print("<section class='posts'>");
+        print("<div class='container posts__container'>");
                 for ($i = 0; $i < count($datosProductos); $i++) {
                 $idProducto[$i] = $datosProductos[$i]['id'];
                 /*print("<form action='../controller/product.php' method='POST'>");*/
@@ -79,14 +44,20 @@
                         print("</div>");
                         print("</div>");
                     print("</article>");
-                /*print("</form>");*/
                 }
-            ?>
-        </div>
-    </section>
+        print("</div>");
+    print("</section>");
+    }else {
+        print("<div class='container' style='text-align: center;'>");
+            print("<h2 style='color:black; text-transform: uppercase;'>No hay articulos de esta categoria</h2>");
+        print("</div>");
+    }
+            
+    ?>
 
     <!-- ==================== END OF POSTS ==================== -->
-
+    
+    
     <section class="category__buttons">
         <div class="container category__buttons-container">
             <?php
@@ -98,6 +69,7 @@
             ?>
         </div>
     </section>
+    
 
     <!-- ==================== END OF CATEGORY BUTTONS ==================== -->
 
@@ -114,6 +86,5 @@
     <!-- ==================== END OF FLOATING BUTTON ==================== -->
 
     <script src="./script/main.js"></script>
-
 </body>
 </html>

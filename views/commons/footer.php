@@ -1,3 +1,16 @@
+<?php
+            use \model\Categoria;
+            use \model\Utils;
+    
+            // Añadimos el código del modelo
+            require_once("../model/Categoria.php");
+            require_once("../model/Utils.php");
+    
+            $gestorCat = new Categoria();
+    
+            $datosCategorias = $gestorCat->getAllCategories($conexPDO);
+?>
+
 <footer>
         <div class="footer__socials">
             <a href="" target="_blank"><i class="uil uil-youtube"></i></a>
@@ -8,10 +21,11 @@
             <article>
                 <h4>Categories</h4>
                 <ul>
-                    <li><a href="">Business</a></li>
-                    <li><a href="">Business</a></li>
-                    <li><a href="">Business</a></li>
-                    <li><a href="">Business</a></li>
+                    <?php
+                        for ($i = 0; $i < count($datosCategorias); $i++) {
+                            print("<li><a href='../controller/productsForCategory.php?id=$idCategoria[$i]'>" . $datosCategorias[$i]['nombre'] . "</a></li>");
+                        }
+                    ?>
                 </ul>
             </article>
             <article>

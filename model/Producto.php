@@ -51,6 +51,27 @@ class Producto {
         }
     }
 
+    public function getProductoCategoria($conexPDO, $idCategoria)
+    {
+
+        if ($conexPDO != null) {
+            try {
+                //Primero introducimos la sentencia a ejecutar con prepare
+                //Ponemos en lugar de valores directamente, interrogaciones
+                $sentencia = $conexPDO->prepare("SELECT * FROM allsports.productos where categoria_id=?");
+
+                $sentencia->bindParam(1, $idCategoria);
+                //Ejecutamos la sentencia
+                $sentencia->execute();
+
+                //Devolvemos los datos del cliente
+                return $sentencia->fetchAll();
+            } catch (PDOException $e) {
+                print("Error al acceder a BD" . $e->getMessage());
+            }
+        }
+    }
+
     /**
      * Devuelve los productos asociados al id del producto introducido
      */

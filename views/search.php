@@ -13,6 +13,7 @@
         // Nos conectamos a la Bd
         $conexPDO = Utils::conectar();
         $datosCategorias = $gestorCat->getAllCategories($conexPDO);
+
     ?>
     
     <!-- ==================== END OF NAV ==================== -->
@@ -35,13 +36,14 @@
         <?php
 
         for ($i = 0; $i < count($datosCategorias); $i++) {
+            $idCategoria[$i] = $datosCategorias[$i]['id'];
             print("<article class='post'>");
                 print("<div class='post__thumbnail'>");
-                    print("<img class='image_post' src=../images/" . $datosCategorias[$i]["imagen"] .">");
+                    print("<a href='../controller/productsForCategory.php?id=$idCategoria[$i]'><img class='image_post' src=../images/" . $datosCategorias[$i]["imagen"] ."></a>");
                 print("</div>");
                 print("<div class='post__info'>");
                 //print("<a href='#' class='category__button'>". $datosCategorias[$i]["nombre"] ."</a>");
-                print("<h3 class='post__title'><a href='post.php'>". $datosCategorias[$i]["nombre"] . "</a></h3>");
+                print("<h3 class='post__title'><a href='../controller/productsForCategory.php?id=$idCategoria[$i]'>". $datosCategorias[$i]["nombre"] . "</a></h3>");
                 print("<p class='post__body'>");
                     print($datosCategorias[$i]["descripcion"]);
                 print("</p>");
@@ -66,12 +68,12 @@
 
     <!-- ==================== END OF POSTS ==================== -->
     
-    
     <section class="category__buttons">
         <div class="container category__buttons-container">
             <?php
             for ($i = 0; $i < count($datosCategorias); $i++) {
-                print("<a href='' class='category__button'>". $datosCategorias[$i]["nombre"] . "</a>");
+                $idCategoria[$i] = $datosCategorias[$i]['id'];
+                print("<a href='../controller/productsForCategory.php?id=$idCategoria[$i]' class='category__button'>". $datosCategorias[$i]["nombre"] . "</a>");
             }
 
             ?>
