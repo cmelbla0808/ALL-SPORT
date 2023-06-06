@@ -760,5 +760,9 @@ MEDIA QUERIES (SMALL)
     .singlepost__container p {
         color: var(--color-black);
     }
+
+    .singlepost__container a p{
+        color: var(--color-white);
+    }
     
 }

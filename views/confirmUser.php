@@ -19,7 +19,7 @@
             <form class="col-3" action="../controller/verificarUser.php" method="POST">
                 <h2>Verificar Cuenta</h2>
                 <div class="mb-3">
-                    <!--<label for="c" class="form-label">Tu código de Verificación es: <b><?php echo $usuario["codActivacion"]; ?></b> </label>-->
+                    <label for="c" class="form-label">Tu código de Verificación es: <b><?php echo $usuario["codActivacion"]; ?></b> </label>
                     <input type="number" class="form-control" id="codigo" name="codigo">
                     <input type="hidden" class="form-control" id="email" name="email" value="<?php echo $usuario["email"]; ?>">
                     <input type="hidden" class="form-control" id="codActivacion" name="codActivacion" value="<?php echo $usuario["codActivacion"] ?>">

@@ -29,7 +29,7 @@
                     ?>
                 </select>
 
-                <input name="imagen" id="imagen" type="hidden" class="form-control" value="foto1.avif">
+                <input name="imagen" id="imagen" type="hidden" class="form-control" value="noFoto.jpg">
 
                 <button type="submit" class="btn">Add User</button>
             </form>

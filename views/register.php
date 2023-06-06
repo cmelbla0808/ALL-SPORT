@@ -38,7 +38,7 @@
                     <input type="email" placeholder="E-mail" id="email" name="email" value='' required />
                     <input type="password" placeholder="Password" id="password" name="password" value='' minlength="8" required />
                     <input type="password" placeholder="Confirmar Password" id="passwordConfirm" name="passwordConfirm" value='' minlength="8" required />
-                    <input name="imagen" id="imagen" type="hidden" class="form-control" value="foto1.avif">
+                    <input name="imagen" id="imagen" type="hidden" class="form-control" value="noFoto.jpg">
 
                     <div class=" form-group row mb-sm-2 mt-sm-2 ">
                         <label for="edad" style="color: #d3aaa2;" class="col-lg-3 col-form-label">Edad</label>

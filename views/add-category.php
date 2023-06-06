@@ -71,12 +71,6 @@
 
     <!-- ==================== END OF FOOTER ==================== -->
 
-    <div class="floating-container">
-        <a href="./subelo.php"><div class="floating-button"><img src="./images/iconos/plus.png" alt=""></div></a>
-    </div>
-
-    <!-- ==================== END OF FLOATING BUTTON ==================== -->
-
     <script src="./script/main.js"></script>
 
 
