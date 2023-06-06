@@ -8,10 +8,6 @@
     <section class="form__section">
         <div class="container form__section-container">
             <h2 style="color: orange;">Edit Product</h2>
-            <?
-                print($_POST["id"]);
-                print("Este es el var dump de resultado = " . var_dump($resultado));
-            ?>
             <form id="basic-form" action="../controller/updateProduct.php" method="POST">
                 <input name="nombre" id="nombre" type="text" placeholder="Title" minlength="3" value="<?= (isset($datosProducto) ? $datosProducto["nombre"] : "") ?>" require>
                 <input type="text" name="descripcion" id="descripcion" rows="4" placeholder="Description" minlength="5" maxlength="250" value="<?= (isset($datosProducto) ? $datosProducto["descripcion"] : "") ?>" required></input>
