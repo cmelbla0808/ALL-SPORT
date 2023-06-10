@@ -22,7 +22,6 @@
 
                 <label style="color: #252b42; font-weight: bold;" for="edad" style="color: #d3aaa2;" class="col-lg-3 col-form-label">Edad</label>
                 <select class="form-control w-75" id="edad" name="edad">
-                    <option selected="true" <?= (isset($datosUsuario) ? $datosUsuario["edad"] : "") ?>" disabled="disabled"><?php echo $datosUsuario["edad"] ?></option>
                     <?php
                     //Generamos las option del select edad
                     for ($i = 1; $i <= 120; $i++) {
@@ -33,7 +32,7 @@
 
                 <input name="imagen" id="imagen" type="hidden" class="form-control" value="noFoto.jpg">
 
-                <button type="submit" class="btn">Add User</button>
+                <button type="submit" class="btn">Edit User</button>
             </form>
         </div>
     </section>

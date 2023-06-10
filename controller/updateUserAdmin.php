@@ -15,10 +15,7 @@ if (isset($_POST["id"]) && isset($_POST["nombre"]) && isset($_POST["apellido"]) 
     $usuario["apellido"] = $_POST["apellido"];
     $usuario["email"] = $_POST["email"];
     $usuario["edad"] = strval($_POST["edad"]);
-    $usuario["imagen"] = $_POST['imagen'];
     $usuario["admin"] = $_POST["admin"];
-
-    var_dump($usuario);
 
     require_once("../model/Usuario.php");
     require_once("../model/Utils.php");
@@ -31,10 +28,10 @@ if (isset($_POST["id"]) && isset($_POST["nombre"]) && isset($_POST["apellido"]) 
     // Modificamos el registro
     $resultado = $gestorCat->updateUsuarioAdmin($usuario, $conexPDO);
 
-    header("Location: ../controller/controller-manageUser.php");
+    //header("Location: ../controller/controller-manageUser.php");
 } else {
 
-    //header("Location: ../controller/manage-product.php");
+    header("Location: ../controller/controller-manageUser.php");
 }
 
 ?>
