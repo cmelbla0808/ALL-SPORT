@@ -7,8 +7,6 @@ use \model\Producto;
 // Creamos un array para guardar los datos del piloto
 $usuario = array();
 
-echo $_FILES["imagen"]["name"];
-
 
 if (isset($_POST["id"]) && isset($_POST["nombre"]) && isset($_POST["apellido"]) && isset($_POST["email"]) && isset($_POST["edad"]) && isset($_POST["admin"]) && isset($_FILES["imagen"])) {
 
@@ -38,11 +36,11 @@ if (isset($_POST["id"]) && isset($_POST["nombre"]) && isset($_POST["apellido"]) 
 
     $resultado2 = $gestorPro->updateProductoImagen($usuario["id"], $usuario["imagen"], $conexPDO);
 
-    session_start();
-    session_destroy();
+    //session_start();
+    //session_destroy();
 
 
-    session_start();
+    //session_start();
     $_SESSION['id'] = $usuario["id"];
     $_SESSION['nombre'] = $usuario['nombre'];
     $_SESSION['apellido'] = $usuario['apellido'];
