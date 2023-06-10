@@ -37,10 +37,9 @@ if (isset($_POST["id"]) && isset($_POST["nombre"]) && isset($_POST["apellido"]) 
     $resultado2 = $gestorPro->updateProductoImagen($usuario["id"], $usuario["imagen"], $conexPDO);
 
     //session_start();
-    //session_destroy();
+    session_destroy();
+    session_start();
 
-
-    //session_start();
     $_SESSION['id'] = $usuario["id"];
     $_SESSION['nombre'] = $usuario['nombre'];
     $_SESSION['apellido'] = $usuario['apellido'];
@@ -48,8 +47,6 @@ if (isset($_POST["id"]) && isset($_POST["nombre"]) && isset($_POST["apellido"]) 
     $_SESSION['edad'] = $usuario['edad'];
     $_SESSION['admin'] = $usuario['admin'];
     $_SESSION['imagen'] = $usuario['imagen'];
-
-    var_dump($usuario);
 
     header("Location: ../views/settings.php");
 
