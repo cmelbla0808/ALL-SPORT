@@ -36,7 +36,7 @@ if (isset($_POST["id"]) && isset($_POST["nombre"]) && isset($_POST["apellido"]) 
 
     $resultado2 = $gestorPro->updateProductoImagen($usuario["id"], $usuario["imagen"], $conexPDO);
 
-    //session_start();
+    session_start();
     session_destroy();
     session_start();
 
