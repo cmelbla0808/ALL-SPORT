@@ -51,13 +51,13 @@ error_reporting(0);
 				</div>
 				<div class="tab-content p-4 p-md-5" id="v-pills-tabContent">
                     <div class="tab-pane fade show active" id="account" role="tabpanel" aria-labelledby="account-tab">
-                        <form action="../controller/updateImagenUser.php" method="POST">
+                        <form action="../controller/updateImagenUser.php" enctype="multipart/form-data" method="POST">
 						<h3 class="mb-4">Avatar Settings</h3>
 						<div class="row">
 							<div class="col-md-6">
 								<div class="form-group">
 								  	<label>Edit photo or avatar</label>
-								  	<input type="file" name="imagen" id="imagen" class="form-control">
+								  	  <input type="file" name="imagen" id="imagen" class="form-control">
                                       <input name="id" id="id" type="hidden" class="form-control" value="<?php print($_SESSION['id']);?>">
                                       <input name="nombre" id="nombre" type="hidden" class="form-control" value="<?php print($_SESSION['nombre']);?>">
                                       <input name="apellido" id="apellido" type="hidden" class="form-control" value="<?php print($_SESSION['apellido']);?>">

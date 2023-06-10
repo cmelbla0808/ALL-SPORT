@@ -9,7 +9,7 @@
     <section class="form__section">
         <div class="container form__section-container">
             <h2 style="color: orange;">Add Category</h2>
-            <form action="../controller/add-category.php" method="POST">
+            <form action="../controller/add-category.php" method="POST" enctype="multipart/form-data">
                 <input type="text" name="nombre" id="nombre" placeholder="Title">
                 <textarea rows="4" name="descripcion" id="descripcion" placeholder="Description"></textarea>
                 <input type="file" name="imagen" id="imagen" placeholder="Image">

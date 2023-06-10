@@ -1,43 +1,40 @@
 <?php
 
-use \model\Producto;
+use \model\Usuario;
 use \model\Utils;
 
 // Creamos un array para guardar los datos del piloto
-$producto = array();
+$usuario = array();
 
 
-if (isset($_POST["id"]) && isset($_POST["nombre"]) && isset($_POST["apellido"]) && isset($_POST["email"]) && isset($_POST["password"]) && isset($_POST["edad"]) && isset($_POST["admin"])) {
+if (isset($_POST["id"]) && isset($_POST["nombre"]) && isset($_POST["apellido"]) && isset($_POST["email"]) && isset($_POST["edad"]) && isset($_POST["admin"])) {
 
     // Rellenamos los datos del piloto que le pasaremos a la vista
-    $producto["id"] = $_POST["id"];
-    $producto["nombre"] = $_POST["nombre"];
-    $producto["apellido"] = $_POST["apellido"];
-    $producto["email"] = $_POST["email"];
-    $producto["edad"] = strval($_POST["edad"]);
-    $producto["imagen"] = $_POST['imagen'];
-    $producto["categoria_id"] = $_POST["categoria_id"];
+    $usuario["id"] = $_POST["id"];
+    $usuario["nombre"] = $_POST["nombre"];
+    $usuario["apellido"] = $_POST["apellido"];
+    $usuario["email"] = $_POST["email"];
+    $usuario["edad"] = strval($_POST["edad"]);
+    $usuario["imagen"] = $_POST['imagen'];
+    $usuario["admin"] = $_POST["admin"];
 
-    if (isset($_POST["modificar"]) && $_POST["modificar"] == "false") {
-        // Con los datos del piloto cargados cargamos la vista
-        include("../views/updateProduct.php");
-    } else {
-        require_once("../model/Producto.php");
-        require_once("../model/Utils.php");
+    var_dump($usuario);
 
-        $gestorPro = new Producto();
+    require_once("../model/Usuario.php");
+    require_once("../model/Utils.php");
 
-        // Nos conectamos a la Bd
-        $conexPDO = Utils::conectar();
+    $gestorCat = new Usuario();
 
-        // Modificamos el registro
-        $resultado = $gestorPro->updateProducto($producto, $conexPDO);
+    // Nos conectamos a la Bd
+    $conexPDO = Utils::conectar();
 
-        header("Location: ../controller/manage-product.php");
-    }
+    // Modificamos el registro
+    $resultado = $gestorCat->updateUsuarioAdmin($usuario, $conexPDO);
+
+    header("Location: ../controller/controller-manageUser.php");
 } else {
 
-    header("Location: ../controller/manage-product.php");
+    //header("Location: ../controller/manage-product.php");
 }
 
 ?>

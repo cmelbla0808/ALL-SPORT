@@ -8,7 +8,7 @@
     <section class="form__section">
         <div class="container form__section-container">
             <h2 style="color: orange;">Edit Product</h2>
-            <form id="basic-form" action="../controller/updateProduct.php" method="POST">
+            <form id="basic-form" action="../controller/updateProduct.php" method="POST" enctype="multipart/form-data">
                 <input name="nombre" id="nombre" type="text" placeholder="Title" minlength="3" value="<?= (isset($datosProducto) ? $datosProducto["nombre"] : "") ?>" require>
                 <input type="text" name="descripcion" id="descripcion" rows="4" placeholder="Description" minlength="5" maxlength="250" value="<?= (isset($datosProducto) ? $datosProducto["descripcion"] : "") ?>" required></input>
                 <input name="precio" id="precio" type="number" placeholder="Price" value="<?= (isset($datosProducto) ? $datosProducto["precio"] : "") ?>" required>

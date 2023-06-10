@@ -7,15 +7,18 @@ use \model\Utils;
 $producto = array();
 
 
-if (isset($_POST["id"]) && isset($_POST["nombre"]) && isset($_POST["descripcion"]) && isset($_POST["precio"]) && isset($_POST["imagen"]) && isset($_POST["categoria_id"])) {
+if (isset($_POST["id"]) && isset($_POST["nombre"]) && isset($_POST["descripcion"]) && isset($_POST["precio"]) && isset($_FILES["imagen"]) && isset($_POST["categoria_id"])) {
 
     // Rellenamos los datos del piloto que le pasaremos a la vista
     $producto["id"] = $_POST["id"];
     $producto["nombre"] = $_POST["nombre"];
     $producto["descripcion"] = $_POST["descripcion"];
     $producto["precio"] = $_POST["precio"];
-    $producto["imagen"] = $_POST['imagen'];
+    $producto["imagen"] = $_FILES["imagen"]["name"];
     $producto["categoria_id"] = $_POST['categoria_id'];
+
+    $ruta = '../images/'.$_FILES["imagen"]['name'];
+    move_uploaded_file($_FILES["imagen"]['tmp_name'], $ruta);
 
     require_once("../model/Producto.php");
     require_once("../model/Utils.php");

@@ -44,7 +44,10 @@
                                 print("<tr>");
                                 print("<td>" . $datosUsuarios[$i]['nombre']  ."</td>");
                                 
-                                print("<td><a href='' class='btn sm'>Edit</a></td>");
+                                print("<form action='../controller/showUpdateUserAdmin.php' method='POST'>");
+                                print("<input type='hidden' name='id' id='id' value='" . $datosUsuarios[$i]["id"] . "'/>");
+                                print("<td><button href='' class='btn sm'>Edit</button></td>");
+                                print("</form>");
 
                                 print("<form action='../controller/borrarUser.php' method='POST'>");
                                 print("<input type='hidden' name='id' id='id' value='" . $datosUsuarios[$i]["id"] . "'/>");

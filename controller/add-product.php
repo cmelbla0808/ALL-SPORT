@@ -9,7 +9,7 @@ use \model\Producto;
 use \model\Utils;
 
 
-if (isset($_POST["nombre"]) && isset($_POST["descripcion"]) && isset($_POST["precio"]) && isset($_POST["categoria_id"]) && isset($_POST["imagen"]) && isset($_POST["usuarios_id"])) {
+if (isset($_POST["nombre"]) && isset($_POST["descripcion"]) && isset($_POST["precio"]) && isset($_POST["categoria_id"]) && isset($_FILES["imagen"]) && isset($_POST["usuarios_id"])) {
     
     // Creamos un array para guardar los datos del producto
     $producto = array();
@@ -19,11 +19,14 @@ if (isset($_POST["nombre"]) && isset($_POST["descripcion"]) && isset($_POST["pre
     $producto["descripcion"] = htmlspecialchars($_POST["descripcion"]);
     $producto["precio"] = strval($_POST["precio"]);
     $producto["categoria_id"] = $_POST["categoria_id"];
-    $producto["imagen"] = $_POST["imagen"];
+    $producto["imagen"] = $_FILES["imagen"]["name"];
     $producto["usuarios_id"] = $_POST["usuarios_id"];
     $producto["name"] = $_POST["name"];
     $producto["lastName"] = $_POST["lastName"];
     $producto["imagenUser"] = $_POST["imagenUser"];
+
+    $ruta = '../images/'.$_FILES["imagen"]['name'];
+    move_uploaded_file($_FILES["imagen"]['tmp_name'], $ruta);
 
     // Añadimos el código del modelo
     require_once("../model/Producto.php");

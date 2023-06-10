@@ -118,6 +118,33 @@ class Usuario
         return $results;
     }
 
+        /**
+     * Devuelve el usuario asociado al Email introducido
+     */
+    function getUsuarioId($conexPDO, $id)
+    {
+        
+        $results = '';
+        if (isset($id) && $conexPDO != null) {
+
+            try {
+
+                $sentencia = $conexPDO->prepare("SELECT * FROM usuarios where id=?");
+
+                $sentencia->bindParam(1, $id);
+                //$sentencia->bindParam(2, $password);
+                //$sentencia->bindParam(2, $activo);
+
+                $sentencia->execute();
+                $results = $sentencia->fetch(PDO::FETCH_ASSOC);
+            }catch (PDOException $e) {
+                print("Error al acceder a BD" . $e->getMessage());
+            }
+        }
+
+        return $results;
+    }
+
     function updateUsuario($usuario, $conexPDO)
     {
 
@@ -137,6 +164,37 @@ class Usuario
                 $sentencia->bindParam(":apellido", $usuario["apellido"]);
                 $sentencia->bindParam(":email", $usuario["email"]);
                 $sentencia->bindParam(":edad", $usuario["edad"]);
+
+                //Ejecutamos la sentencia
+                $result = $sentencia->execute();
+            } catch (PDOException $e) {
+                print("Error al acceder a BD" . $e->getMessage());
+            }
+        }
+
+        return $result;
+    }
+
+    function updateUsuarioAdmin($usuario, $conexPDO)
+    {
+
+
+        $result = null;
+        if (isset($usuario) && isset($usuario["nombre"]) && isset($usuario["apellido"]) && isset($usuario["email"]) && isset($usuario["edad"]) && isset($usuario["admin"])  && $conexPDO != null) {
+
+            try {
+                //Preparamos la sentencia
+                $sentencia = $conexPDO->prepare("UPDATE allsports.usuarios set nombre=:nombre, apellido=:apellido, email=:email, edad=:edad, admin=:admin where id=:id");
+
+                //print($sentencia->queryString);
+
+                //Asociamos los valores a los parametros de la sentencia sql
+                $sentencia->bindParam(":id", $usuario["id"]);
+                $sentencia->bindParam(":nombre", $usuario["nombre"]);
+                $sentencia->bindParam(":apellido", $usuario["apellido"]);
+                $sentencia->bindParam(":email", $usuario["email"]);
+                $sentencia->bindParam(":edad", $usuario["edad"]);
+                $sentencia->bindParam(":admin", $usuario["admin"]);
 
                 //Ejecutamos la sentencia
                 $result = $sentencia->execute();

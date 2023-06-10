@@ -13,7 +13,7 @@ require_once("../model/Categoria.php");
 require_once("../model/Utils.php");
 
 
-if (isset($_POST["nombre"]) && isset($_POST["descripcion"]) && isset($_POST["imagen"])) {
+if (isset($_POST["nombre"]) && isset($_POST["descripcion"]) && isset($_FILES["imagen"])) {
     
     // Creamos un array para guardar los datos del producto
     $categoria = array();
@@ -21,7 +21,10 @@ if (isset($_POST["nombre"]) && isset($_POST["descripcion"]) && isset($_POST["ima
     // Rellenamos los datos del producto que le pasaremos a la vista
     $categoria["nombre"] = htmlspecialchars($_POST["nombre"]);
     $categoria["descripcion"] = htmlspecialchars($_POST["descripcion"]);
-    $categoria["imagen"] = $_POST["imagen"];
+    $categoria["imagen"] = $_FILES["imagen"]["name"];
+
+    $ruta = '../images/'.$_FILES["imagen"]['name'];
+    move_uploaded_file($_FILES["imagen"]['tmp_name'], $ruta);
 
     $gestorCat = new Categoria();
 

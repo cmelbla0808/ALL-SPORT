@@ -7,8 +7,10 @@ use \model\Producto;
 // Creamos un array para guardar los datos del piloto
 $usuario = array();
 
+echo $_FILES["imagen"]["name"];
 
-if (isset($_POST["id"]) && isset($_POST["nombre"]) && isset($_POST["apellido"]) && isset($_POST["email"]) && isset($_POST["edad"]) && isset($_POST["admin"]) && isset($_POST["imagen"])) {
+
+if (isset($_POST["id"]) && isset($_POST["nombre"]) && isset($_POST["apellido"]) && isset($_POST["email"]) && isset($_POST["edad"]) && isset($_POST["admin"]) && isset($_FILES["imagen"])) {
 
     // Rellenamos los datos del piloto que le pasaremos a la vista
     $usuario["id"] = $_POST["id"];
@@ -17,7 +19,7 @@ if (isset($_POST["id"]) && isset($_POST["nombre"]) && isset($_POST["apellido"]) 
     $usuario["email"] = $_POST["email"];
     $usuario["edad"] = strval(($_POST['edad']));
     $usuario["admin"] = $_POST["admin"];
-    $usuario["imagen"] = $_POST["imagen"];
+    $usuario["imagen"] = $_FILES["imagen"]["name"];
 
     require_once("../model/Usuario.php");
     require_once("../model/Producto.php");
@@ -31,6 +33,8 @@ if (isset($_POST["id"]) && isset($_POST["nombre"]) && isset($_POST["apellido"]) 
 
     // Modificamos el registro
     $resultado = $gestorUsu->updateUsuarioImagen($usuario, $conexPDO);
+    $ruta = '../images/'.$_FILES["imagen"]['name'];
+    move_uploaded_file($_FILES["imagen"]['tmp_name'], $ruta);
 
     $resultado2 = $gestorPro->updateProductoImagen($usuario["id"], $usuario["imagen"], $conexPDO);
 
@@ -46,6 +50,8 @@ if (isset($_POST["id"]) && isset($_POST["nombre"]) && isset($_POST["apellido"]) 
     $_SESSION['edad'] = $usuario['edad'];
     $_SESSION['admin'] = $usuario['admin'];
     $_SESSION['imagen'] = $usuario['imagen'];
+
+    var_dump($usuario);
 
     header("Location: ../views/settings.php");
 
