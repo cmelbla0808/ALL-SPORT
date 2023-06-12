@@ -259,6 +259,32 @@ class Usuario
         return $result;
     }
 
+    function updateUsuarioPasswordEmail($usuario, $conexPDO)
+    {
+
+        $result = null;
+        if (isset($usuario) && isset($usuario["password"]) && $conexPDO != null) {
+
+            try {
+                //Preparamos la sentencia
+                $sentencia = $conexPDO->prepare("UPDATE allsports.usuarios set password=:password where email=:email");
+
+                //print($sentencia->queryString);
+
+                //Asociamos los valores a los parametros de la sentencia sql
+                $sentencia->bindParam(":email", $usuario["email"]);
+                $sentencia->bindParam(":password", $usuario["password"]);
+
+                //Ejecutamos la sentencia
+                $result = $sentencia->execute();
+            } catch (PDOException $e) {
+                print("Error al acceder a BD" . $e->getMessage());
+            }
+        }
+
+        return $result;
+    }
+
     function verificarUsuario($conexPDO, $email, $codigo)
     {
         
