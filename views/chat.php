@@ -35,7 +35,7 @@ $url_avatar = "../images/" . $_SESSION['imagen'];
             <section class="menu">
                 <header>
                     <form action="">
-                        <input type="search" name="search" placeholder="Search">
+                        <input type="text" id="search" name="search" placeholder="Search">
                     </form>
                     <div class="create">
                         <i class="far fa-edit"></i>
@@ -45,11 +45,11 @@ $url_avatar = "../images/" . $_SESSION['imagen'];
                     <ul>
                         <?php
                         for ($i = 0; $i < count($datosChat); $i++) {
-                            print("<a href='../controller/mensageChat.php?id=" . $datosChat[$i]['id'] . "' style='text-decoration: none;'>");
+                            print("<a href='../controller/mensageChat.php?id=" . $datosChat[$i]['id'] . "' class='chatIzq''>");
                             print("<li class='member'>");
                             print("<img src='../images/". $datosChat[$i]['imagen'] ."' alt=''>");
                             print("<div class='name' >");
-                            print("<h3 style='color: black;'>" . $datosChat[$i]['nombreProducto']  . "</h3>");
+                            print("<h3 class='name2' style='color: black;'>" . $datosChat[$i]['nombreProducto']  . "</h3>");
                             print("<p>" . $datosChat[$i]['nombreVendedor'] . "</p>");
                             print("</div>");
                             print("</li>");
@@ -98,6 +98,20 @@ $url_avatar = "../images/" . $_SESSION['imagen'];
             </section>
         </div>
     </main>
+    
+    <script>
+        document.addEventListener("keyup", e=>{
+
+            if (e.target.matches("#search")) {
+
+                document.querySelectorAll(".chatIzq").forEach(articulo => {
+                    articulo.querySelector(".name2").textContent.toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase())
+                    ?articulo.classList.remove("filtro")
+                    :articulo.classList.add("filtro")
+                })
+            }
+        })
+    </script>
 
 </body>
 

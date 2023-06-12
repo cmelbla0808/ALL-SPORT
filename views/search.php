@@ -22,7 +22,7 @@
         <form class="container search__bar-container" action="">
             <div>
                 <i class="uil uil-search"></i>
-                <input type="search" name="" placeholder="Search">
+                <input type="text" id="buscador" name="buscador" placeholder="Search">
             </div>
             <button type="submit" class="btn">Go</button>
         </form>
@@ -43,7 +43,7 @@
                 print("</div>");
                 print("<div class='post__info'>");
                 //print("<a href='#' class='category__button'>". $datosCategorias[$i]["nombre"] ."</a>");
-                print("<h3 class='post__title'><a href='../controller/productsForCategory.php?id=$idCategoria[$i]'>". $datosCategorias[$i]["nombre"] . "</a></h3>");
+                print("<h3 id='name' class='post__title'><a href='../controller/productsForCategory.php?id=$idCategoria[$i]'>". $datosCategorias[$i]["nombre"] . "</a></h3>");
                 print("<p class='post__body'>");
                     print($datosCategorias[$i]["descripcion"]);
                 print("</p>");
@@ -95,6 +95,19 @@
 
     <!-- ==================== END OF FLOATING BUTTON ==================== -->
 
-    <script src="./script/main.js"></script>
+    <script src="../script/main.js"></script>
+    <script>
+        document.addEventListener("keyup", e=>{
+
+            if (e.target.matches("#buscador")) {
+
+                document.querySelectorAll(".post").forEach(articulo => {
+                    articulo.querySelector(".post__title").textContent.toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase())
+                    ?articulo.classList.remove("filtro")
+                    :articulo.classList.add("filtro")
+                })
+            }
+        })
+    </script>
 </body>
 </html>
