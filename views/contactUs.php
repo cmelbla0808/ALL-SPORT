@@ -37,12 +37,6 @@
 
     <!-- ==================== END OF CATEGORY BUTTONS ==================== -->
 
-    <?php
-        include("../views/commons/footer.php");
-    ?>
-
-    <!-- ==================== END OF FOOTER ==================== -->
-
     <script src="./script/main.js"></script>
 
 </body>

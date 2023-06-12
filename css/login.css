@@ -171,3 +171,10 @@ button {
       padding: 10px 0;
       line-height: 1;
   }
+
+  @media screen and (max-width: 430px) {
+    .register-popUp {
+        min-width: 20rem;
+    }
+
+  }

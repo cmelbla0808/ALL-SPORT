@@ -22,6 +22,7 @@ $url_avatar = "../images/" . $_SESSION['imagen'];
     <link href="../css/dashboard.css" rel="stylesheet" type="text/css">
     <link href="../css/shoppingCart.css" rel="stylesheet" type="text/css">
     <link href="../css/contactUs.css" rel="stylesheet" type="text/css">
+    <link rel="icon" type="image/jpg" href="../images/favIcon.webp"/>
     
     <!-- ICONSCOUT CDN -->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
