@@ -28,7 +28,7 @@ if (isset($_POST["id"]) && isset($_POST["nombre"]) && isset($_POST["apellido"]) 
     // Modificamos el registro
     $resultado = $gestorCat->updateUsuarioAdmin($usuario, $conexPDO);
 
-    //header("Location: ../controller/controller-manageUser.php");
+    header("Location: ../controller/controller-manageUser.php");
 } else {
 
     header("Location: ../controller/controller-manageUser.php");
