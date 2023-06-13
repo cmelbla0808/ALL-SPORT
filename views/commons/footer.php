@@ -13,9 +13,9 @@
 
 <footer>
         <div class="footer__socials">
-            <a href="" target="_blank"><i class="uil uil-youtube"></i></a>
-            <a href="" target="_blank"><i class="uil uil-twitter"></i></a>
-            <a href="" target="_blank"><i class="uil uil-instagram-alt"></i></a>
+            <a href="https://www.youtube.com/" target="_blank"><i class="uil uil-youtube"></i></a>
+            <a href="https://twitter.com/?lang=es" target="_blank"><i class="uil uil-twitter"></i></a>
+            <a href="https://www.instagram.com/" target="_blank"><i class="uil uil-instagram-alt"></i></a>
         </div>
         <div class="container footer__container">
             <article>
@@ -31,28 +31,18 @@
             <article>
                 <h4>Support</h4>
                 <ul>
-                    <li><a href="">Business</a></li>
-                    <li><a href="">Business</a></li>
-                    <li><a href="">Business</a></li>
-                    <li><a href="">Business</a></li>
-                </ul>
-            </article>
-            <article>
-                <h4>Blog</h4>
-                <ul>
-                    <li><a href="">Business</a></li>
-                    <li><a href="">Business</a></li>
-                    <li><a href="">Business</a></li>
-                    <li><a href="">Business</a></li>
+                    <li><a href="">Frequent questions</a></li>
+                    <li><a href="">Policies and terms of use</a></li>
+                    <li><a href="">Company information</a></li>
                 </ul>
             </article>
             <article>
                 <h4>Permalinks</h4>
                 <ul>
-                    <li><a href="">Business</a></li>
-                    <li><a href="">Business</a></li>
-                    <li><a href="">Business</a></li>
-                    <li><a href="">Business</a></li>
+                    <li><a href="../controller/mainController.php">Home</a></li>
+                    <li><a href="../views/search.php">Search</a></li>
+                    <li><a href="../controller/controller-manageShoppingCart.php">Favorites</a></li>
+                    <li><a href="../views/contactUs.php">Contact</a></li>
                 </ul>
             </article>
         </div>
