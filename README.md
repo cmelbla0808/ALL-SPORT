@@ -1,5 +1,10 @@
 # ALL-SPORT
+<div align="center">
+  <img src="https://www.apkonline.net/imagescropped/allsportsicon128.jpgplus.webp" alt="ALLSPORTS" width="120"/>
+</div>
 
+ <br>
+ 
 ALLSPORTS es un emocionante proyecto de marketplace que se especializa en la compra y venta de productos deportivos de segunda mano, basado en la exitosa dinámica de Wallapop. Nuestra plataforma brinda a los entusiastas del deporte y a los aficionados la oportunidad de encontrar artículos deportivos de calidad a precios asequibles, mientras promovemos la reutilización y el reciclaje de productos.
 
 La arquitectura del proyecto se ha desarrollado utilizando una combinación de tecnologías web ampliamente utilizadas, como PHP, HTML5, CSS3, JavaScript y Bootstrap. Estas tecnologías nos permiten crear una experiencia de usuario fluida, intuitiva y atractiva, al tiempo que garantizamos la eficiencia y la usabilidad del sitio.
